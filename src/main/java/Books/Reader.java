@@ -14,7 +14,9 @@ public class Reader  implements Flow.Subscriber {
 
     public void onNext(Object item) {
         System.out.println("Got : " + item);
+        //TODO: For some reason, the run flakes out here and doesn't add anything. However, if I run with coverage, it does work.
         subscription.request(1);
+
     }
 
     public void onError(Throwable throwable) {
